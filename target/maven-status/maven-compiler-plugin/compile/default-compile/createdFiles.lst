@@ -1,0 +1,12 @@
+mx\uady\model\request\AlumnoRequest.class
+mx\uady\model\exception\InvalidAlumnoException.class
+mx\uady\rest\AlumnoRest.class
+mx\uady\model\Alumno.class
+mx\uady\model\Equipo.class
+mx\uady\model\exception\BadRequestException.class
+mx\uady\model\Message.class
+mx\uady\App.class
+mx\uady\service\AlumnoService.class
+mx\uady\model\exception\AlumnoExistsException.class
+mx\uady\repository\AlumnoRepository.class
+mx\uady\model\Usuario.class
