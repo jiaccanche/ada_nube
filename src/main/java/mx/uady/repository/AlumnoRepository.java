@@ -7,5 +7,5 @@ import mx.uady.model.Alumno;
 
 @Repository
 public interface AlumnoRepository extends JpaRepository<Alumno, Integer>{
-
+    public Alumno findById(int id);
 }
