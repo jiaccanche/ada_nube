@@ -10,6 +10,8 @@ import mx.uady.repository.AlumnoRepository;
 import mx.uady.model.Alumno;
 import mx.uady.model.Equipo;
 import mx.uady.model.Usuario;
+import mx.uady.model.exception.BadRequestException;
+import mx.uady.model.exception.InvalidAlumnoException;
 import mx.uady.model.request.AlumnoRequest;
 
 @Service
@@ -65,5 +67,21 @@ public class AlumnoService {
   public void delete(int alumnoId) {
     alumnoRepository.deleteById(alumnoId);
   }
+
+public Alumno getAlumno(int id) {
+  Alumno alumno;
+	try{
+      alumno = alumnoRepository.findById(id);
+  }catch(NullPointerException e){
+    throw new BadRequestException();
+  }
+
+  if(alumno == null){
+    throw new InvalidAlumnoException();
+  }
+
+  return alumno;
+
+}
  
 }
