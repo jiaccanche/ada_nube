@@ -7,17 +7,21 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 
 @Entity
-@Table(name = "Equipos")
+@Table(name = "equipos")
 public class Equipo{
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column
     private String modelo;
 
-    
+    public Equipo(){};
+
     /**
      * @param id the id to set
      */
@@ -42,5 +46,6 @@ public class Equipo{
     public String getModelo() {
         return modelo;
     }
+
 
 }
