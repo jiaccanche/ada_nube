@@ -7,10 +7,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import mx.uady.model.Alumno;
@@ -24,9 +24,16 @@ public class AlumnoRest {
     private AlumnoService alumnoService = new AlumnoService();
     
     @GetMapping("/alumno")
-    public ResponseEntity< List<Alumno> > readAlumno() {
+    public ResponseEntity< List<Alumno> > readAlumnos() {
         List<Alumno> alumnos = alumnoService.getAlumnos();
         return ResponseEntity.ok(alumnos);
+    }
+
+    @GetMapping("/alumno/{id}")
+    public ResponseEntity<Alumno> readAlumno(@PathVariable("id") int id){
+        Alumno a = alumnoService.getAlumno(id);
+        return ResponseEntity.ok(a);
+
     }
 
     @PostMapping("/alumno")
@@ -35,9 +42,8 @@ public class AlumnoRest {
         return ResponseEntity.status(HttpStatus.CREATED).body(a);
     }
 
-    @DeleteMapping("/alumno")
-    public ResponseEntity<String> deleteAlumno(@RequestBody Integer alumnoId){
-        System.out.println(alumnoId);
+    @DeleteMapping("/alumno/{id}")
+    public ResponseEntity<String> deleteAlumno(@PathVariable int alumnoId){
         alumnoService.delete(alumnoId);
         return ResponseEntity.status(HttpStatus.OK).body("Alumno eliminado");
     } 
