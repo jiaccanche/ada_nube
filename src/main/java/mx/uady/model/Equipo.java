@@ -20,8 +20,7 @@ public class Equipo{
     @Column
     private String modelo;
 
-    
-    public Equipo (){}
+    public Equipo(){};
 
     /**
      * @param id the id to set
@@ -47,14 +46,6 @@ public class Equipo{
     public String getModelo() {
         return modelo;
     }
-    /**
-     * @return the alumnos
-     */
-   
 
-    /**
-     * @param alumnos the alumnos to set
-     */
-    
-    
+
 }

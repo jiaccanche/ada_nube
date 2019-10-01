@@ -1,3 +1,6 @@
+target/*
+target/
+pom.xml
 ines (11 sloc) 268 Bytes
 target/
 pom.xml.tag
