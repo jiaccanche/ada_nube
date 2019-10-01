@@ -1,12 +1,15 @@
 package mx.uady.model.request;
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
+
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+
+
 public class AlumnoRequest {
+    private Integer id;
+
     @NotNull(message = "No nulo")
     @Size(min = 5, max = 50, message 
       = "No valido")
@@ -17,11 +20,10 @@ public class AlumnoRequest {
     @NotEmpty(message = "No VACIO")
     @Size(min = 9, max = 20, message 
       = "No valido")
-    private String matricula;
+    private String licenciatura;
 
-    @Min(value = 18, message = "Tienes que ser mayor de 18")
-    @Max(value = 30, message = "No puede ser mas grande que 30")
-    private int edad;
+    private Integer usuario;
+    private Integer equipo;
 
 
     public AlumnoRequest() {
@@ -36,19 +38,53 @@ public class AlumnoRequest {
         this.nombre = nombre;
     }
 
-    public String getMatricula() {
-        return this.matricula;
+    /**
+     * @return the id
+     */
+    public int getId() {
+        return id;
+    }
+    /**
+     * @return the licenciatura
+     */
+    public String getLicenciatura() {
+        return licenciatura;
+    }
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id) {
+        this.id = id;
+    }
+    /**
+     * @param licenciatura the licenciatura to set
+     */
+    public void setLicenciatura(String licenciatura) {
+        this.licenciatura = licenciatura;
     }
 
-    public void setMatricula(String matricula) {
-        this.matricula = matricula;
+    /**
+     * @param equipo the equipo to set
+     */
+    public void setEquipo(Integer equipo) {
+        this.equipo = equipo;
     }
-
-    public int getEdad() {
-        return this.edad;
+    /**
+     * @param usuario the usuario to set
+     */
+    public void setUsuario(Integer usuario) {
+        this.usuario = usuario;
     }
-
-    public void setEdad(int edad) {
-        this.edad = edad;
+    /**
+     * @return the equipo
+     */
+    public Integer getEquipo() {
+        return equipo;
+    }
+    /**
+     * @return the usuario
+     */
+    public Integer getUsuario() {
+        return usuario;
     }
 }

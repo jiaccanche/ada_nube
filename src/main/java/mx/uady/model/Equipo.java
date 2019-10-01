@@ -7,19 +7,20 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 
 @Entity
-@Table(name = "Equipos")
+@Table(name = "equipos")
 public class Equipo{
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column
     private String modelo;
 
-    /*@OneToMany( mappedBy = "equipo")
-    private List<Alumno> alumnos;
-    public Equipo (){}*/
+    public Equipo(){};
 
     /**
      * @param id the id to set
@@ -45,18 +46,6 @@ public class Equipo{
     public String getModelo() {
         return modelo;
     }
-    /*
-     * @return the alumnos
-     
-    public List<Alumno> getAlumnos() {
-        return alumnos;
-    }
 
-    /**
-     * @param alumnos the alumnos to set
-     
-    public void setAlumnos(List<Alumno> alumnos) {
-        this.alumnos = alumnos;
-    }*/
-    
+
 }
