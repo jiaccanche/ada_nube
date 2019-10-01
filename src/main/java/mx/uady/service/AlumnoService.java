@@ -26,10 +26,10 @@ public class AlumnoService {
     Alumno alumnoCrear = new Alumno();
     alumnoCrear.setNombre(alumno.getNombre());
     alumnoCrear.setLicenciatura(alumno.getLicenciatura());
-    alumnoCrear.setEquipos(new Equipo());
+    alumnoCrear.setEquipo(new Equipo());
     alumnoCrear.setUsuario(new Usuario());
     alumnoCrear.getUsuario().setId(alumno.getUsuario());
-    alumnoCrear.getEquipos().setId(alumno.getEquipo());
+    alumnoCrear.getEquipo().setId(alumno.getEquipo());
 
     Alumno aux = alumnoRepository.save(alumnoCrear);
     return alumnoRepository.findById(aux.getId().intValue());
@@ -48,10 +48,10 @@ public class AlumnoService {
     }else{
       alumno_exist.setNombre(alumno.getNombre());
       alumno_exist.setLicenciatura(alumno.getLicenciatura());
-      alumno_exist.setEquipos(new Equipo());
+      alumno_exist.setEquipo(new Equipo());
       alumno_exist.setUsuario(new Usuario());
       alumno_exist.getUsuario().setId(alumno.getUsuario());
-      alumno_exist.getEquipos().setId(alumno.getEquipo());
+      alumno_exist.getEquipo().setId(alumno.getEquipo());
       
       Alumno aux = alumnoRepository.save(alumno_exist);
       return alumnoRepository.findById(aux.getId().intValue());
