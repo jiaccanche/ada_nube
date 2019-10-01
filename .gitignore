@@ -1,5 +1,9 @@
+target/*
+target/
+pom.xml
 ines (11 sloc) 268 Bytes
 target/
+pom.xml
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
@@ -8,6 +12,16 @@ release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
+/.vscode
+.gitignore
+/.vscode/*
+
+/resources
+resources
+/resources/application.properties
+resources/application.properties
+/src/main/java/mx/uady/model/Alumno.java
+/src/main/java/mx/uady/model/Equipo.java
 # https://github.com/takari/maven-wrapper#usage-without-binary-jar
 .mvn/wrapper/maven-wrapper.jar
 #Hay archivos que no estoy usando, si se necesita agregar al repositorio que digan

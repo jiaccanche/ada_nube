@@ -7,11 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
-import org.hibernate.annotations.ManyToAny;
 
 @Entity
 @Table(name = "alumnos")
@@ -34,7 +31,7 @@ public class Alumno {
 
     @ManyToOne
     @JoinColumn(name = "id_equipo")
-    private Equipo equipos;
+    private Equipo equipo;
 
     public Integer getId() {
         return this.id;
@@ -75,15 +72,15 @@ public class Alumno {
     /**
      * @return the equipos
      */
-    public Equipo getEquipos() {
-        return equipos;
+    public Equipo getEquipo() {
+        return equipo;
     }
 
     /**
      * @param equipos the equipos to set
      */
-    public void setEquipos(Equipo equipos) {
-        this.equipos = equipos;
+    public void setEquipo(Equipo equipo) {
+        this.equipo = equipo;
     }
 
 

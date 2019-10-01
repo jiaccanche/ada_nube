@@ -4,8 +4,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(HttpStatus.NOT_FOUND)
-public class InvalidAlumnoException extends RuntimeException{
-  public InvalidAlumnoException(){
-      super("El alumno no existe con la matricula");
+public class InvalidEquipoException extends RuntimeException{
+  public InvalidEquipoException(){
+      super("El equipo no existe con ese id");
   }
 }
