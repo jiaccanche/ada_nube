@@ -44,7 +44,6 @@ public class AlumnoRest {
 
     @DeleteMapping("/alumno/{id}")
     public ResponseEntity<String> deleteAlumno(@PathVariable int alumnoId){
-        System.out.println(alumnoId);
         alumnoService.delete(alumnoId);
         return ResponseEntity.status(HttpStatus.OK).body("Alumno eliminado");
     } 
